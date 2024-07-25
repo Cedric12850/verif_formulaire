@@ -1,17 +1,26 @@
-// selecteur des champ de formulaire
-let input = document.querySelectorAll('input, textarea');
-console.log(input);
+// méthode qui précharge le Dom
+document.addEventListener('DOMContentLoaded', function() {
 
-// selecteur bouton envoyer
-let contactBtn = document.querySelector('#contactBtn')
-    console.log(contactBtn);
+let inputs = document.querySelectorAll('input, textarea');
+let contactBtn = document.getElementById('#contactBtn');
+console.log(contactBtn)
+// Vérifier tous les champs lors du clic sur le bouton Envoyer
+contactBtn.addEventListener('click', function() {
+    let champValid = true;
 
-// initialisation du tableau de saisie
-let saisie = ['revberg','feazfzf'];
-let stockSaisie = localStorage.getItem('saisie');
-//let stockSaisieText = stockSaisie.split ('');
+    inputs.forEach(input => {
+        validateField(input);
+        if (input.classList.contains('error')) {
+            champValidValid = false;
+        }
+    });
 
-console.log(saisie);
-contactBtn.addEventListener('click', ()=>{
-    saisie.document.querySelector()
+    if (champValid) {
+        alert('Formulaire soumis avec succès!');
+        // Ici, vous pouvez soumettre le formulaire, par exemple en utilisant AJAX.
+    } else {
+        alert('Veuillez corriger les erreurs dans le formulaire.');
+    }
+});
+
 })
