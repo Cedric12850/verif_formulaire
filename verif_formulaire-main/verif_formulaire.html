@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Verif_formulaire, initial-scale=1.0">
+    <title>Verification de formulaire</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>La vérifications de formulaire en JS.</h1>
+    <section class="input">
+        <article>
+            <label for="name"></label>
+            <input id="input" type="text" name="name" placeholder="Nom">
+        </article>
+
+        <article>
+            <label for="prenom"></label>
+            <input id="input" type="text" name="prenom" placeholder="Prénom">
+        </article>
+
+        <article>
+            <label for="pseudo"></label>
+            <input id="input" type="text" name="pseudo" placeholder="Pseudo">
+        </article>
+
+        <article> 
+            <label for="courriel"></label>
+            <input id="input" type="text" name="courriel" placeholder="Courriel">
+        </article>
+
+        <article>
+            <textarea name="message" placeholder="Commentaires"></textarea>
+        </article>           
+                  
+        <article>
+            
+            <div class="checkbox">
+                <input id="input" type="checkbox" name="checkbox" value="checkbox">
+                <label for="checkbox"> Cocher avant d'envoyer</label>
+            </div>
+
+            <div class="contactBtn">
+                <button id="contactBtn" type="submit">envoyer</button>               
+            </div>    
+        </article>
+    </section>
+
+    <script src="script_formulaire.js"></script>
+</body>
+</html>
