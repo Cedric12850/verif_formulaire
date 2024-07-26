@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=Verif_formulaire, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification de formulaire</title>
 
     <link rel="stylesheet" href="styles.css">
@@ -14,29 +14,30 @@
         <article id="input">
             <label for="name"></label>
             <input id="name" type="text" name="name" placeholder="Nom">
+            <span id="nameErreur"></span>
         </article>
 
         <article id="input">
             <label for="prenom"></label>
             <input id="prenom" type="text" name="prenom" placeholder="Prénom">
-            <span id="erreur"></span>
+            <span id="prenomErreur"></span>
         </article>
 
         <article id="input">
             <label for="pseudo"></label>
             <input id="pseudo" type="text" name="pseudo" placeholder="Pseudo">
-            <span id="erreur"></span>
+            <span id="pseudoErreur"></span>
         </article>
 
-        <article id="mail"> 
+        <article id="courriel"> 
             <label for="courriel"></label>
-            <input id="mail" type="text" name="courriel" placeholder="Courriel">
+            <input id="mail" type="email" name="courriel" placeholder="Courriel">
             <span id="mailErreur"></span>
         </article>
 
         <article id="input">
             <textarea  id="message" name="message" placeholder="Commentaires"></textarea>
-            <span id="erreur"></span>
+            <span id="textErreur"></span>
         </article>           
                   
         <article>
@@ -44,7 +45,7 @@
             <div class="checkbox">
                 <label for="checkbox"> Acceptez les termes & conditions.</label>
                 <input id="checkbox" type="checkbox" name="checkbox" value="checkbox">
-                <span id="chekErreur"></span>
+                <span id="checkErreur"></span>
 
             </div>  
             <div class="contactBtn">
