@@ -18,12 +18,12 @@ let prenomErreur = document.getElementById('prenomErreur');
 let pseudoErreur = document.getElementById('pseudoErreur');
 let mailErreur = document.getElementById('mailErreur');
 let checkErreur = document.getElementById('checkErreur');
-
+    
 
 // vérification de la validité du champ nom
-function nomValide() {
-    let nomValide = name.value.trim();
-    if (nomValide == '') {
+function isNomValide() {
+    let isNomValide = name.value.trim();
+    if (isNomValide == '') {
         name.style.border = "2px solid red";
         nameErreur.textContent = "Le champ ne doit pas être vide"
         return false;
@@ -33,13 +33,13 @@ function nomValide() {
         return true;
     }
 }
-name.addEventListener('blur', nomValide);
+name.addEventListener('blur', isNomValide);
 
 
 // vérification de la validité du champ prenom
-function prenomValide() {
-    let prenomValide = prenom.value.trim();
-    if (prenomValide == '') {
+function isPrenomValide() {
+    let isPrenomValide = prenom.value.trim();
+    if (isPrenomValide == '') {
         prenom.style.border = "2px solid red";
         prenomErreur.textContent = "Le champ ne doit pas être vide"
         return false;
@@ -49,13 +49,13 @@ function prenomValide() {
         return true;
     }
 }
-prenom.addEventListener('blur', prenomValide);
+prenom.addEventListener('blur', isPrenomValide);
 
 
 // vérification de la validité du champ pseudo
-function pseudoValide() {
-    let pseudoValide = pseudo.value.trim();
-    if (pseudoValide == '') {
+function isPseudoValide() {
+    let isPseudoValide = pseudo.value.trim();
+    if (isPseudoValide == '') {
         pseudo.style.border = "2px solid red";
         pseudoErreur.textContent = "Le champ ne doit pas être vide";
         return false;
@@ -65,12 +65,12 @@ function pseudoValide() {
         return true;
     }
 }
-pseudo.addEventListener('blur', pseudoValide);
+pseudo.addEventListener('blur', isPseudoValide);
 
 // vérification de la validité du champ text
-function textValide() {
-    let textValide = message.value.trim();
-    if (textValide == '') {
+function isTextValide() {
+    let isTextValide = message.value.trim();
+    if (isTextValide == '') {
         message.style.border = "2px solid red";
         textErreur.textContent = "Le champ ne doit pas être vide";
         return false;
@@ -80,14 +80,14 @@ function textValide() {
         return true;
     }
 }
-message.addEventListener('blur', textValide); // 'blur' pour le changement d'input
+message.addEventListener('blur', isTextValide); // 'blur' pour le changement d'input
 
 
 
 // vérification de la validité du champ checkbox
-function checkValide (){
-    let checkValide = document.getElementById(checkErreur)
+function isCheckValide (){
     if (checkbox.checked == true){
+        let isCheckValide = document.getElementById(checkErreur)
         checkMessage.style.color="green";
         checkErreur.textContent ="";
         return true;
@@ -98,22 +98,22 @@ function checkValide (){
         return false;
     }
 }
-checkbox.addEventListener('blur', checkValide);
+checkbox.addEventListener('blur', isCheckValide);
 
 
 
 // vérification de la validité du champ mail
-function mailValide() {
-    let mailValide = mail.value.trim();
+function isMailValide() {
+    let isMailValide = mail.value.trim();
   
     let formMail = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
-    if (mailValide == '') {
+    if (isMailValide == '') {
         mail.style.border = "2px solid red";
         mailErreur.textContent = "Le champ ne doit pas être vide"
         return false;
     }else{
-        if(!formMail.test(mailValide)){
-            console.log(formMail.test(mailValide))  //si le test renvoie false. Le message d'erreur forma est affiché
+        if(!formMail.test(isMailValide)){
+            console.log(formMail.test(isMailValide))  //si le test renvoie false. Le message d'erreur forma est affiché
             mail.style.border = "2px solid red";
             mailErreur.textContent = "Le format mail n'est pas respecté";
             return false;
@@ -124,22 +124,21 @@ function mailValide() {
         }
     }
 }
-mail.addEventListener('blur', mailValide);
+mail.addEventListener('blur', isMailValide);
 
 // Vérification du bouton envoyer
 contactBtn.addEventListener ('click',(e)=>{
     e.preventDefault(); // empèche l'envoi du formulaire
 console.log(e)
 
-    if (!nomValide()|| !prenomValide() || !pseudoValide() || !textValide() || !checkValide() || !mailValide()){  // si formulaire false = message d'erreur
+    if (!isNomValide()|| !isPrenomValide() || !isPseudoValide() || !isTextValide() || !isCheckValide() || !isMailValide()){  // si formulaire false = message d'erreur
         envoiFormulaire.textContent = "Votre formulaire présente des erreurs et ne peut donc pas être envoyé.";
         envoiFormulaire.style.color = "red"; 
     } else{
         champ.submit();
-        envoiFormulaire.textContent ="Formulaire Envoyé"
+        alert("Formulaire Envoyé");
     }
-    
-   
 })
+
 
 })  // fin de la commande qui vérifie le DOM
