@@ -35,6 +35,22 @@ function isNomValide() {
 }
 name.addEventListener('blur', isNomValide);
 
+// On peut factoriser la fonction pour ne pas avoir besoin de répéter le code
+/*let isEmpty =(e)=>{
+    let elem = e.target;
+    let elemValue =elem.value
+    if (isEmpty != '') {
+        elem.style.border = "2px solid red";
+        elem.textContent = "Le champ ne doit pas être vide"     //--- Solution pour afficher le texte pas encore trouvé ---//
+        return false;
+    }else{
+        elem.style.border = "2px solid green";;
+        elem.textContent = "";  //--- Solution pour afficher le texte pas encore trouvé ---//
+        return true;
+    }
+}
+// il suffir juste d'appeler la fonction quand on passe sur l'élément désiré. Ici prénom.
+prenom.addEventListener('blur', isEmpty);*/
 
 // vérification de la validité du champ prenom
 function isPrenomValide() {
@@ -106,7 +122,7 @@ checkbox.addEventListener('blur', isCheckValide);
 function isMailValide() {
     let isMailValide = mail.value.trim();
   
-    let formMail = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
+    let formMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (isMailValide == '') {
         mail.style.border = "2px solid red";
         mailErreur.textContent = "Le champ ne doit pas être vide"

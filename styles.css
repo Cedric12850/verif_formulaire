@@ -34,7 +34,7 @@ textarea {
 #champ {
     background-color: rgb(216, 216, 215);
     padding: 10px;
-    width: 50%;
+    width: 60%;
     margin: auto;
     box-shadow: 1px 3px 1px 1px gray;
 }
@@ -42,7 +42,7 @@ textarea {
 .titre {
   background-color: rgb(255, 255, 185);
   color: rgb(106, 106, 235);
-  width: 50%;
+  width: 60%;
   margin: auto;
   box-shadow: 1px 3px 1px 1px gray;
 }
