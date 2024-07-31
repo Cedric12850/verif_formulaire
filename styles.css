@@ -1,7 +1,22 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:after, *:before {
+    box-sizing: inherit;
+  }
+  
+  *::first-letter {
+    text-transform: capitalize;
+  }
+
 
 body {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
+
 article{
     margin: 15px;
 }
@@ -14,4 +29,28 @@ input {
 textarea {
     width: 300px;
     height: 150px;
+}
+
+#champ {
+    background-color: rgb(216, 216, 215);
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 1px 3px 1px 1px gray;
+}
+
+.titre {
+  background-color: rgb(255, 255, 185);
+  color: rgb(106, 106, 235);
+  width: 50%;
+  margin: auto;
+  box-shadow: 1px 3px 1px 1px gray;
+}
+
+#checkMessage {
+  color: rgb(106, 106, 235);
+}
+#checkbox {
+  width: 10%;
+  margin-bottom: 10px;
 }

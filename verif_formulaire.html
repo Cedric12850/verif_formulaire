@@ -2,49 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=Verif_formulaire, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification de formulaire</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>La vérifications de formulaire en JS.</h1>
-    <section class="input">
-        <article>
+    <div class="titre">
+        <h1>La vérifications de formulaire en JS</h1>
+    </div>
+    <section >
+        <form id="champ">
+        <article id="input">
             <label for="name"></label>
-            <input id="input" type="text" name="name" placeholder="Nom">
+            <input id="name" type="text" name="name" placeholder="Nom">
+            <span id="nameErreur"></span>
         </article>
 
-        <article>
+        <article id="input">
             <label for="prenom"></label>
-            <input id="input" type="text" name="prenom" placeholder="Prénom">
+            <input id="prenom" type="text" name="prenom" placeholder="Prénom">
+            <span id="prenomErreur"></span>
         </article>
 
-        <article>
+        <article id="input">
             <label for="pseudo"></label>
-            <input id="input" type="text" name="pseudo" placeholder="Pseudo">
+            <input id="pseudo" type="text" name="pseudo" placeholder="Pseudo">
+            <span id="pseudoErreur"></span>
         </article>
 
-        <article> 
+        <article id="courriel"> 
             <label for="courriel"></label>
-            <input id="input" type="text" name="courriel" placeholder="Courriel">
+            <input id="mail" type="email" name="courriel" placeholder="Courriel">
+            <span id="mailErreur"></span>
         </article>
 
-        <article>
-            <textarea name="message" placeholder="Commentaires"></textarea>
+        <article id="input">
+            <textarea  id="message" name="message" placeholder="Commentaires"></textarea>
+            <span id="textErreur"></span>
         </article>           
                   
         <article>
             
-            <div class="checkbox">
-                <input id="input" type="checkbox" name="checkbox" value="checkbox">
-                <label for="checkbox"> Cocher avant d'envoyer</label>
-            </div>
+            <div>
+                <label id="checkMessage" for="checkbox"> Acceptez les termes & conditions.</label>
+                <input id="checkbox" type="checkbox" name="checkbox" value="checkbox">
+                <span id="checkErreur"></span>
 
+            </div>  
             <div class="contactBtn">
-                <button id="contactBtn" type="submit">envoyer</button>               
+                <button id="contactBtn" type="submit">envoyer</button> 
+                <span id="envoiFormulaire"></span>              
             </div>    
         </article>
+    </form>
     </section>
 
     <script src="script_formulaire.js"></script>
